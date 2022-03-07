@@ -12,6 +12,7 @@ services:
             - default
     db:
         image: mysql:8.0
+        platform: linux/amd64
         ports: 
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password

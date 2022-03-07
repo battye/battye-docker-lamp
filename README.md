@@ -1,4 +1,8 @@
-# docker-lamp
+## Notes
+
+Wait a minute or so after starting the containers before loading any database connections, because it cannot connect until all the containers have finished setting up.
+
+# Original docker-lamp documentation
 
 Docker example with Apache, MySql 8.0, PhpMyAdmin and Php
 

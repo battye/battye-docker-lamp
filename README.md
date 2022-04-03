@@ -15,8 +15,26 @@ docker-compose down --volumes
 ### CLI
 
 ```
-docker exec -it battye-docker-lamp-www-1 /bin/bash
+docker exec -it battye-docker-lamp_www_1 /bin/bash
 ```
+
+### XDebug, Docker, VS Code, PHP and Mac
+
+The tutorial [here](https://php.tutorials24x7.com/blog/how-to-debug-php-using-xdebug-visual-studio-code-and-docker-on-ubuntu) is quite useful for getting Xdebug, Docker and VS Code working. In the launch.json file, you might need to hardcode the path mapping (which might look something like this on Mac) if you see errors about an unverified breakpoint:
+
+    "pathMappings": {
+        "/var/www/html": "/Users/username/path/to/code/www/"
+    }
+
+In settings.json for VS Code, you might also need to have something like this so that the IDE does not look for a local PHP executable:
+
+    {
+        "php.debug.executablePath": "/Users/username/path/to/code/phpwrapper",
+        "php.validate.executablePath": "/Users/username/path/to/code/phpwrapper",
+        "php.suggest.basic": false
+    }
+
+Other important settings can be found in xdebug.ini in this repository. `host.docker.internal` can be used on Mac to determine the host machine. Xdebug logs can be found inside `./xdebug/xdebug.log`.
 
 ### docker-lamp documentation
 

@@ -36,6 +36,8 @@ In settings.json for VS Code, you might also need to have something like this so
 
 Other important settings can be found in xdebug.ini in this repository. `host.docker.internal` can be used on Mac to determine the host machine. Xdebug logs can be found inside `./xdebug/xdebug.log`.
 
+To access a website from within a Docker container from another computer on the same local network, run `ipconfig getifaddr en0` and then use the IP address. For Symfony websites, make sure the `APP_ENV` is set to `prod` first.
+
 ### docker-lamp documentation
 
 This is a Docker example with Apache, MySQL 8.0, PhpMyAdmin and PHP 8.1

@@ -40,16 +40,20 @@ To access a website from within a Docker container from another computer on the 
 
 ### docker-lamp documentation
 
-This is a Docker example with Apache, MySQL 8.0, PhpMyAdmin and PHP 8.1
+This is a Docker example with Apache, MySQL 8.0, phpMyAdmin and PHP 8.1
 
 - You can use MariaDB 10.1 if you checkout to the tag `mariadb-10.1` - contribution made by [luca-vercelli](https://github.com/luca-vercelli)
 - You can use MySQL 5.7 if you checkout to the tag `mysql5.7`
 
 Open phpMyAdmin at [http://localhost:8000](http://localhost:8000)
-Open wthe eb browser to look at a simple PHP example at [http://localhost:8001](http://localhost:8001) (the `www/` directory is where the files should be stored)
+Open the web browser to look at a simple PHP example at [http://localhost:8001](http://localhost:8001) (the `www/` directory is where the files should be stored)
 
 Run the MySQL client with:
 
 - `docker-compose exec db mysql -u root -p` 
+
+To import a database dump, run a command like (making sure the dump.sql file is placed first):
+
+- `docker-compose exec -T db mysql -uroot -ptest databse_name < www/dump.sql`
 
 Enjoy!

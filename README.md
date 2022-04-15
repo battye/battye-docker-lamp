@@ -36,6 +36,8 @@ In settings.json for VS Code, you might also need to have something like this so
 
 Other important settings can be found in xdebug.ini in this repository. `host.docker.internal` can be used on Mac to determine the host machine. Xdebug logs can be found inside `./xdebug/xdebug.log`.
 
+To start using breakpoints, open the `www/` directory in VS Code and click the Run and Debug button, then click the green play button next to "Listen for Xdebug". If this is working correctly, an orange bar will appear at the bottom of the IDE window. Breakpoints can then be added to the appropriate PHP files, and when the page is loaded from the web browser the script will halt and the variables can be inspected in VS Code. 
+
 To access a website from within a Docker container from another computer on the same local network, run `ipconfig getifaddr en0` and then use the IP address. For Symfony websites, make sure the `APP_ENV` is set to `prod` first.
 
 ### docker-lamp documentation
